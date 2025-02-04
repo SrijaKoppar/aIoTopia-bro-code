@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "author": "Srija Koppar",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard", "id": "bb1", "top": 227.4, "left": -390.8, "attrs": {} },
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -18.9, "left": -159, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": -1.3, "left": 182.2, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "dht1:SDA", "esp:14", "green", [ "v0" ] ],
+    [ "esp:GND.1", "bb1:bn.26", "black", [ "h0" ] ],
+    [ "dht1:GND", "bb1:bn.28", "black", [ "v0" ] ],
+    [ "esp:3V3", "bb1:tp.10", "green", [ "h0" ] ],
+    [ "dht1:VCC", "bb1:tp.9", "red", [ "v0" ] ],
+    [ "pot1:GND", "bb1:bn.30", "black", [ "v0" ] ],
+    [ "pot1:VCC", "bb1:tp.7", "red", [ "v0" ] ],
+    [ "pot1:SIG", "esp:34", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
